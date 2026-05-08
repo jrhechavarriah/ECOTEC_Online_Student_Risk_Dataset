@@ -18,8 +18,9 @@ authors:
 
   - family-names: "Ascencio-Jordan"
     given-names: "Erika"
+    orcid: "https://orcid.org/0000-0003-0878-6207"
 
-repository-code: "https://github.com/USERNAME/ECOTEC_Online_Student_Risk_Dataset"
+repository-code: "https://github.com/jrhechavarria/ECOTEC_Online_Student_Risk_Dataset"
 
 abstract: >
   Open institutional dataset containing anonymized records from online higher
@@ -40,7 +41,7 @@ keywords:
 
 license: "CC-BY-4.0"
 
-version: "1.0.0"
+version: "1.0.1"
 
 date-released: "2026-05-08"
 
@@ -63,8 +64,9 @@ preferred-citation:
 
     - family-names: "Ascencio-Jordan"
       given-names: "Erika"
+      orcid: "https://orcid.org/0000-0003-0878-6207"
 
   title: "ECOTEC_Online Student Risk Dataset"
   year: 2026
   publisher: "Zenodo"
-  doi: "DOI_PENDING"
+  doi: 10.5281/zenodo.20091002

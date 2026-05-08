@@ -1,0 +1,70 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it using the metadata below."
+title: "ECOTEC_Online Student Risk Dataset"
+type: dataset
+
+authors:
+  - family-names: "Hechavarria-Hernandez"
+    given-names: "Jesus Rafael"
+    orcid: "https://orcid.org/0000-0002-9013-8665"
+
+  - family-names: "Navarro-Espinosa"
+    given-names: "Johanna Andrea"
+    orcid: "https://orcid.org/0000-0002-1741-2234"
+
+  - family-names: "Blanc-Pihuave"
+    given-names: "Glenda"
+    orcid: "https://orcid.org/0000-0001-6314-0607"
+
+  - family-names: "Ascencio-Jordan"
+    given-names: "Erika"
+
+repository-code: "https://github.com/USERNAME/ECOTEC_Online_Student_Risk_Dataset"
+
+abstract: >
+  Open institutional dataset containing anonymized records from online higher
+  education programs at Universidad ECOTEC (Ecuador). The repository supports
+  reproducible research in learning analytics, educational data mining,
+  explainable artificial intelligence, fairness-aware AI, and educational
+  decision-support systems.
+
+keywords:
+  - learning analytics
+  - educational data mining
+  - online higher education
+  - reproducible AI
+  - student retention
+  - fairness-aware AI
+  - explainable AI
+  - institutional analytics
+
+license: "CC-BY-4.0"
+
+version: "1.0.0"
+
+date-released: "2026-05-08"
+
+url: "https://github.com/USERNAME/ECOTEC_Online_Student_Risk_Dataset"
+
+preferred-citation:
+  type: dataset
+  authors:
+    - family-names: "Hechavarria-Hernandez"
+      given-names: "Jesus Rafael"
+      orcid: "https://orcid.org/0000-0002-9013-8665"
+
+    - family-names: "Navarro-Espinosa"
+      given-names: "Johanna Andrea"
+      orcid: "https://orcid.org/0000-0002-1741-2234"
+
+    - family-names: "Blanc-Pihuave"
+      given-names: "Glenda"
+      orcid: "https://orcid.org/0000-0001-6314-0607"
+
+    - family-names: "Ascencio-Jordan"
+      given-names: "Erika"
+
+  title: "ECOTEC_Online Student Risk Dataset"
+  year: 2026
+  publisher: "Zenodo"
+  doi: "DOI_PENDING"

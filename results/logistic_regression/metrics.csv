@@ -1,0 +1,2 @@
+accuracy,f1_score,roc_auc,model,n_train,n_test
+0.937467018469657,0.965894373291121,0.9888166206226127,LogisticRegression,8842,3790

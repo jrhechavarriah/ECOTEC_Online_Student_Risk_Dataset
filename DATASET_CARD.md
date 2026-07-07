@@ -130,6 +130,8 @@ ECOTEC_Online_Student_Risk_Dataset/
 
 ### Target Variable
 - TARGET_RISK
+0 = No identified academic risk
+1 = Academic/retention risk
 
 ---
 

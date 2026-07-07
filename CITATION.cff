@@ -45,7 +45,7 @@ version: "1.0.2"
 
 date-released: "2026-07-07"
 
-url: "https://github.com/USERNAME/ECOTEC_Online_Student_Risk_Dataset"
+url: "https://github.com/jrhechavarriah/ECOTEC_Online_Student_Risk_Dataset"
 
 preferred-citation:
   type: dataset
@@ -69,4 +69,4 @@ preferred-citation:
   title: "ECOTEC_Online Student Risk Dataset"
   year: 2026
   publisher: "Zenodo"
-  doi: 10.5281/zenodo.20091002
+  doi: 10.5281/zenodo.21243448

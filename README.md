@@ -188,7 +188,7 @@ This dataset is distributed under the Creative Commons Attribution 4.0 Internati
 
 If you use this dataset, please cite:
 
-J.R. Hechavarria-Hernandez, J.A. Navarro-Espinosa, G. Blanc-Pihuave, E. Ascencio-Jordán, ECOTEC_Online Student Risk Dataset, Zenodo (2026). https://doi.org/10.5281/zenodo.20091002.
+Hechavarria-Hernandez, J. R., Navarro-Espinosa, J. A., Blanc-Pihuave, G., & Ascencio-Jordan, E. (2026). ECOTEC_Online Student Risk Dataset (v1.0.2). Zenodo. https://doi.org/10.5281/zenodo.21243448
 
 ---
 

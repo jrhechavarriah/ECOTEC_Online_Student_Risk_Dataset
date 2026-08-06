@@ -130,8 +130,13 @@ ECOTEC_Online_Student_Risk_Dataset/
 
 ### Target Variable
 - TARGET_RISK
-0 = No identified academic risk
-1 = Academic/retention risk
+
+`TARGET_RISK` is a binary administrative target derived during institutional curation from the restricted institutional source variables `STUDENT_TYPE` and `GRADUATION_DATE`.
+
+- **Class 0:** Alumni status or a valid graduation date was recorded.
+- **Class 1:** The student was not recorded as alumni and no graduation date was available.
+
+The variable is contemporaneous and does not constitute a prospective dropout or retention outcome. `STUDENT_TYPE` and `GRADUATION_DATE` were excluded from the public predictor set after target construction.
 
 ---
 
@@ -145,7 +150,7 @@ This dataset may support:
 - Benchmarking of machine learning models
 - Fairness-aware AI research
 - Explainable AI research
-- Educational decision-support systems
+- Methodological evaluation of educational classification and decision-support pipelines
 - Reproducible educational AI workflows
 
 ---
@@ -159,6 +164,7 @@ The dataset was not designed for:
 - Medical evaluation
 - Identification of individual persons
 - Commercial surveillance applications
+- Prospective dropout prediction or early-warning deployment without a temporally ordered outcome and independent validation
 
 ---
 
@@ -167,6 +173,8 @@ The dataset was not designed for:
 Institutional records were extracted from academic management systems associated with online higher education programs at Universidad ECOTEC, Ecuador. Data acquisition procedures included preprocessing, normalization, anonymization, and removal of personally identifiable information prior to public dissemination.
 
 The repository integrates structured tabular data intended for reproducible analytical workflows.
+
+`TARGET_RISK` was derived during institutional curation from the restricted institutional source variables `STUDENT_TYPE` and `GRADUATION_DATE`. Class 0 indicates that alumni status or a valid graduation date was recorded; class 1 indicates that the student was not recorded as alumni and no graduation date was available. The target and the released predictors correspond to the same institutional snapshot; therefore, the target is contemporaneous and has no prospective prediction horizon. The two source variables used to construct the target were excluded from the public release and from the benchmark predictor matrix.
 
 ---
 
@@ -198,6 +206,8 @@ The dataset was organized under privacy-preserving procedures intended to protec
 - Class imbalance associated with real-world institutional distributions
 - Variable availability dependent on institutional systems
 - Some variables aggregated during anonymization procedures
+- `TARGET_RISK` is a contemporaneous administrative status-derived label rather than a prospectively observed dropout or retention outcome
+- Benchmark results should not be interpreted as validated early-warning performance or operational institutional decision support
 
 ---
 

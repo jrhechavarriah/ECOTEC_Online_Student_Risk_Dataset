@@ -121,6 +121,8 @@ ECOTEC_Online_Student_Risk_Dataset/
 ### Target Variable
 - TARGET_RISK
 
+**Operational definition.** `TARGET_RISK` is a binary administrative target derived during institutional curation from the restricted institutional source variables `STUDENT_TYPE` and `GRADUATION_DATE`. Class 0 indicates that alumni status or a valid graduation date was recorded; class 1 indicates that the student was not recorded as alumni and no graduation date was available. The variable is contemporaneous and does not constitute a prospective dropout or retention outcome. The two restricted source variables were excluded from the public predictor set after target construction.
+
 ---
 
 ## Data Anonymization
@@ -162,8 +164,10 @@ The dataset may support research and benchmarking in:
 - Responsible artificial intelligence
 - Fairness-aware machine learning
 - Explainable artificial intelligence
-- Educational decision-support systems
+- Methodological evaluation of educational classification and decision-support pipelines
 - Reproducible educational AI research
+
+The released benchmark models are computational reproducibility baselines. Their performance should not be interpreted as prospective dropout or retention prediction, validated early-warning performance, institutional readiness, or operational decision support.
 
 ---
 

@@ -7,42 +7,59 @@ authors:
   - family-names: "Hechavarria-Hernandez"
     given-names: "Jesus Rafael"
     orcid: "https://orcid.org/0000-0002-9013-8665"
-
   - family-names: "Navarro-Espinosa"
     given-names: "Johanna Andrea"
     orcid: "https://orcid.org/0000-0002-1741-2234"
-
   - family-names: "Blanc-Pihuave"
     given-names: "Glenda"
     orcid: "https://orcid.org/0000-0001-6314-0607"
-
   - family-names: "Ascencio-Jordan"
     given-names: "Erika"
     orcid: "https://orcid.org/0000-0003-0878-6207"
 
-repository-code: "https://github.com/jrhechavarriah/ECOTEC_Online_Student_Risk_Dataset"
-
 abstract: >
-  Open institutional dataset containing anonymized records from online higher
-  education programs at Universidad ECOTEC (Ecuador). The repository supports
+  Open institutional dataset containing anonymized student-level records from
+  online higher education programs at Universidad ECOTEC (Ecuador). The public
+  release contains 12,632 unique student records and 18 variables and supports
   reproducible research in learning analytics, educational data mining,
-  explainable artificial intelligence, fairness-aware AI, and educational
-  decision-support systems.
+  institutional analytics, explainable artificial intelligence, fairness-aware
+  AI, and educational decision-support systems.
 
 keywords:
   - learning analytics
   - educational data mining
   - online higher education
   - reproducible AI
-  - student retention
+  - student risk analytics
   - fairness-aware AI
   - explainable AI
   - institutional analytics
 
 license: "CC-BY-4.0"
-
 version: "1.0.3"
-
 date-released: "2026-08-17"
+doi: "10.5281/zenodo.21982443"
+repository-code: "https://github.com/jrhechavarriah/ECOTEC_Online_Student_Risk_Dataset"
+url: "https://doi.org/10.5281/zenodo.21982443"
 
-url: "https://github.com/jrhechavarriah/ECOTEC_Online_Student_Risk_Dataset"
+preferred-citation:
+  type: dataset
+  title: "ECOTEC_Online Student Risk Dataset"
+  authors:
+    - family-names: "Hechavarria-Hernandez"
+      given-names: "Jesus Rafael"
+      orcid: "https://orcid.org/0000-0002-9013-8665"
+    - family-names: "Navarro-Espinosa"
+      given-names: "Johanna Andrea"
+      orcid: "https://orcid.org/0000-0002-1741-2234"
+    - family-names: "Blanc-Pihuave"
+      given-names: "Glenda"
+      orcid: "https://orcid.org/0000-0001-6314-0607"
+    - family-names: "Ascencio-Jordan"
+      given-names: "Erika"
+      orcid: "https://orcid.org/0000-0003-0878-6207"
+  version: "1.0.3"
+  year: 2026
+  publisher: "Zenodo"
+  doi: "10.5281/zenodo.21982443"
+  url: "https://doi.org/10.5281/zenodo.21982443"

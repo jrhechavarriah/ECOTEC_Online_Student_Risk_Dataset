@@ -1,19 +1,6 @@
-# Core scientific computing
-numpy>=1.26.0
+﻿numpy>=1.26.0
 pandas>=2.2.0
-
-# Machine learning
+scipy>=1.11.0
 scikit-learn>=1.5.0
-
-# Visualization
-matplotlib>=3.8.0
-
-# Excel support
-openpyxl>=3.1.0
-
-# Optional utilities for reproducibility
 joblib>=1.4.0
-
-# Notebook compatibility
-jupyter>=1.0.0
-ipykernel>=6.29.0
+matplotlib>=3.8.0

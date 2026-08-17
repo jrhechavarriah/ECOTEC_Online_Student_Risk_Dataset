@@ -12,7 +12,15 @@ from pathlib import Path
 from typing import Dict, Tuple
 
 import pandas as pd
-from sklearn.metrics import accuracy_score, f1_score, roc_auc_score, classification_report
+from sklearn.metrics import (
+    accuracy_score,
+    balanced_accuracy_score,
+    classification_report,
+    confusion_matrix,
+    f1_score,
+    precision_recall_fscore_support,
+    roc_auc_score,
+)
 from sklearn.model_selection import train_test_split
 
 
@@ -109,11 +117,34 @@ def split_dataset(
 
 
 def compute_binary_classification_metrics(y_true, y_pred, y_prob) -> Dict[str, float]:
-    """Compute standard binary classification benchmark metrics."""
+    """
+    Compute aggregate and class-specific binary classification metrics.
+
+    The original aggregate metrics (accuracy, binary F1-score, and ROC-AUC)
+    are retained unchanged for backward compatibility. Additional metrics are
+    reported to support transparent evaluation under class imbalance.
+    """
+    precision, recall, class_f1, support = precision_recall_fscore_support(
+        y_true,
+        y_pred,
+        labels=[0, 1],
+        zero_division=0,
+    )
+
     metrics = {
         "accuracy": accuracy_score(y_true, y_pred),
         "f1_score": f1_score(y_true, y_pred),
         "roc_auc": roc_auc_score(y_true, y_prob),
+        "balanced_accuracy": balanced_accuracy_score(y_true, y_pred),
+        "macro_f1": f1_score(y_true, y_pred, average="macro"),
+        "class_0_precision": precision[0],
+        "class_0_recall": recall[0],
+        "class_0_f1": class_f1[0],
+        "class_0_support": int(support[0]),
+        "class_1_precision": precision[1],
+        "class_1_recall": recall[1],
+        "class_1_f1": class_f1[1],
+        "class_1_support": int(support[1]),
     }
     return metrics
 
@@ -131,3 +162,17 @@ def save_classification_report(y_true, y_pred, output_path: str | Path) -> None:
     output_path.parent.mkdir(parents=True, exist_ok=True)
     report = classification_report(y_true, y_pred)
     output_path.write_text(report, encoding="utf-8")
+
+
+def save_confusion_matrix(y_true, y_pred, output_path: str | Path) -> None:
+    """Save a 2 x 2 confusion matrix with explicit class labels as CSV."""
+    output_path = Path(output_path)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+
+    matrix = confusion_matrix(y_true, y_pred, labels=[0, 1])
+    matrix_df = pd.DataFrame(
+        matrix,
+        index=["actual_0", "actual_1"],
+        columns=["predicted_0", "predicted_1"],
+    )
+    matrix_df.to_csv(output_path, index_label="actual_class")

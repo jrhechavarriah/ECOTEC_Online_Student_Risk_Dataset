@@ -35,6 +35,7 @@ from utils import (
     compute_binary_classification_metrics,
     save_metrics,
     save_classification_report,
+    save_confusion_matrix,
 )
 
 
@@ -104,6 +105,7 @@ def main() -> None:
 
     save_metrics(metrics, output_dir / "metrics.csv")
     save_classification_report(y_test, y_pred, output_dir / "classification_report.txt")
+    save_confusion_matrix(y_test, y_pred, output_dir / "confusion_matrix.csv")
 
     print("Logistic Regression benchmark completed.")
     print(metrics)

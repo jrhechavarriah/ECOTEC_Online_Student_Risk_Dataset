@@ -1,4 +1,4 @@
-# DATASET CARD
+﻿# DATASET CARD
 # ECOTEC_Online Student Risk Dataset
 
 ---
@@ -31,49 +31,46 @@ The dataset integrates demographic, academic, financial, admission, and institut
 
 ```text
 ECOTEC_Online_Student_Risk_Dataset/
-│
-├── data/
-│   └── ecotec_online_student_risk.csv
-│
-├── derived_data/
-│   ├── ecotec_online_student_risk_processed.csv
-│   └── preprocessing_summary.csv
-│
-├── results/
-│   ├── logistic_regression/
-│   │   ├── metrics.csv
-│   │   └── classification_report.txt
-│   │
-│   └── random_forest/
-│       ├── metrics.csv
-│       └── classification_report.txt
-│
-├── figures/
-│   ├── class_distribution.png
-│   ├── subgroup_distribution.png
-│   └── feature_categories.png
-│
-├── metadata/
-│   ├── variable_dictionary.xlsx
-│   ├── codebook.pdf
-│   └── preprocessing_description.pdf
-│
-├── scripts/
-│   ├── utils.py
-│   ├── preprocessing_pipeline.py
-│   ├── generate_dataset_figures.py
-│   ├── baseline_random_forest.py
-│   ├── baseline_logistic_regression.py
-│   └── requirements.txt
-│
-├── README.md
-├── DATASET_CARD.md
-├── LICENSE
-├── CITATION.cff
-└── .gitignore
+|
+|-- data/
+|   `-- ecotec_online_student_risk.csv
+|
+|-- metadata/
+|   |-- variable_dictionary.xlsx
+|   `-- codebook.pdf
+|
+|-- scripts/
+|   |-- utils.py
+|   |-- baseline_logistic_regression.py
+|   |-- baseline_random_forest.py
+|   |-- generate_dataset_figures.py
+|   |-- requirements.txt
+|   |-- requirements-lock.txt
+|   `-- environment_versions.txt
+|
+|-- results/
+|   |-- logistic_regression/
+|   |   |-- metrics.csv
+|   |   |-- classification_report.txt
+|   |   `-- confusion_matrix.csv
+|   |
+|   `-- random_forest/
+|       |-- metrics.csv
+|       |-- classification_report.txt
+|       `-- confusion_matrix.csv
+|
+|-- figures/
+|   |-- class_distribution.png
+|   |-- subgroup_distribution.png
+|   `-- feature_categories.png
+|
+|-- README.md
+|-- DATASET_CARD.md
+|-- CITATION.cff
+|-- LICENSE
+|-- .gitignore
+`-- .gitattributes
 ```
-
----
 
 ## Included Data Resources
 
@@ -108,6 +105,9 @@ ECOTEC_Online_Student_Risk_Dataset/
 
 ## Variable Categories
 
+### Identifier
+- PUBLIC_RECORD_ID
+
 ### Demographic Variables
 - AGE
 - GENDER
@@ -119,26 +119,32 @@ ECOTEC_Online_Student_Risk_Dataset/
 - FACULTY
 - DEGREE_PROGRAM
 - CURRICULUM_YEAR
-- ENROLLMENT_STATUS
 
-### Financial Variables
-- PAYMENT_PLAN
-- SCHOLARSHIP_NAME
+### Institutional and Geographic Variables
+- INSTITUTION_TYPE
+- NATIONALITY_COUNTRY
+- REGION
 
 ### Admission Variables
+- TRANSFER_STUDENT_FLAG
 - ONLINE_ADMISSION_TYPE
+
+### Financial and Administrative Variables
+- PAYMENT_PLAN
+- PAYMENT_DEFERRAL_TYPE
+- SCHOLARSHIP_NAME
 
 ### Target Variable
 - TARGET_RISK
 
-`TARGET_RISK` is a binary administrative target derived during institutional curation from the restricted institutional source variables `STUDENT_TYPE` and `GRADUATION_DATE`.
-
-- **Class 0:** Alumni status or a valid graduation date was recorded.
-- **Class 1:** The student was not recorded as alumni and no graduation date was available.
-
-The variable is contemporaneous and does not constitute a prospective dropout or retention outcome. `STUDENT_TYPE` and `GRADUATION_DATE` were excluded from the public predictor set after target construction.
-
----
+**Operational definition.** `TARGET_RISK` is a binary contemporaneous
+administrative target derived during restricted institutional curation from
+`STUDENT_TYPE` and `GRADUATION_DATE`. Class 0 indicates that alumni status or
+a valid graduation date was recorded; class 1 indicates that the student was
+not recorded as alumni and no graduation date was available. The two
+restricted source variables were excluded from the public predictor matrix
+after target construction. The released label does not constitute a
+prospectively observed dropout or retention outcome.
 
 ## Intended Use
 
@@ -170,26 +176,21 @@ The dataset was not designed for:
 
 ## Data Collection Process
 
-Institutional records were extracted from academic management systems associated with online higher education programs at Universidad ECOTEC, Ecuador. Data acquisition procedures included preprocessing, normalization, anonymization, and removal of personally identifiable information prior to public dissemination.
+The public dataset contains 12,632 student-level records from online higher education programs at Universidad ECOTEC, Ecuador. Each public record corresponds to one unique student.
 
-The repository integrates structured tabular data intended for reproducible analytical workflows.
+Before public dissemination, the institutional data underwent controlled preparation, verification, harmonization, and anonymization in accordance with the approved institutional protocol. The finalized public dataset contains 18 variables, no duplicate rows, and no missing cells.
 
-`TARGET_RISK` was derived during institutional curation from the restricted institutional source variables `STUDENT_TYPE` and `GRADUATION_DATE`. Class 0 indicates that alumni status or a valid graduation date was recorded; class 1 indicates that the student was not recorded as alumni and no graduation date was available. The target and the released predictors correspond to the same institutional snapshot; therefore, the target is contemporaneous and has no prospective prediction horizon. The two source variables used to construct the target were excluded from the public release and from the benchmark predictor matrix.
-
----
+`TARGET_RISK` is a binary contemporaneous administrative target derived during institutional data preparation from `STUDENT_TYPE` and `GRADUATION_DATE`. Class 0 indicates that alumni status or a valid graduation date was recorded, whereas Class 1 indicates that the student was not recorded as alumni and no valid graduation date was available. The variables used to construct the target are not included in the public predictor matrix.
 
 ## Data Anonymization and Privacy
 
-Personally identifiable information was removed before public release. The anonymization workflow excluded:
-- Names
-- Identification numbers
-- Email addresses
-- Telephone numbers
-- Direct institutional identifiers
+Before public release, the institutional data underwent a controlled preparation and anonymization process in accordance with the approved institutional protocol. The resulting public dataset contains no direct personal identifiers and retains selected variables only at the levels of granularity considered appropriate for scientific dissemination.
 
-Additional transformations and categorical aggregations were applied to reduce re-identification risk while preserving analytical utility.
+Geographic information was reviewed and harmonized during institutional data preparation, and the public `REGION` variable was standardized to Ecuador's four natural regions: `Coastal Region`, `Highlands Region`, `Amazon Region`, and `Insular Region`.
 
----
+Country-specific nationality categories were generalized to `Ecuadorian` and `International` to reduce disclosure risk associated with sparsely represented nationality categories while preserving the analytical distinction between domestic and international students.
+
+The publicly released scripts operate on this finalized anonymized dataset and are intended to support data validation, descriptive analysis, and reproducible benchmark analyses.
 
 ## Ethical Considerations
 
@@ -231,18 +232,13 @@ Metadata documentation and reproducibility resources are included to facilitate 
 
 ## Reproducibility
 
-The repository includes:
-- Preprocessing scripts
-- Benchmark Random Forest pipeline
-- Benchmark Logistic Regression pipeline
-- Variable dictionaries
-- Metadata documentation
-- Reproducibility artifacts
-- Requirements file
+The public repository is organized around the finalized anonymized dataset in `data/ecotec_online_student_risk.csv`.
 
-These resources are intended to facilitate reproducible educational AI workflows.
+The released Python scripts support validation of the public dataset, generation of descriptive figures, and reproducible Logistic Regression and Random Forest benchmark analyses. Model-specific outputs include overall performance metrics, class-specific classification reports, and confusion matrices.
 
----
+`requirements.txt` specifies the principal runtime dependencies. `requirements-lock.txt` records the corresponding package versions captured in the final benchmark validation environment, while `environment_versions.txt` documents the associated computational environment.
+
+The benchmark models are provided as computational reproducibility baselines and should not be interpreted as prospectively validated dropout prediction models or operational early-warning systems.
 
 ## License
 
@@ -266,3 +262,7 @@ Jesus Rafael Hechavarria-Hernandez
 Universidad ECOTEC  
 Samborondón, Ecuador  
 Email: jhechavarria@ecotec.edu.ec
+
+
+
+

@@ -6,7 +6,7 @@ and student risk prediction.
 
 Example:
     python scripts/baseline_logistic_regression.py \
-        --input derived_data/ecotec_online_student_risk.csv \
+        --input data/ecotec_online_student_risk.csv \
         --output-dir results/logistic_regression
 """
 
@@ -44,8 +44,8 @@ def main() -> None:
     parser.add_argument(
         "--input",
         type=str,
-        default="derived_data/ecotec_online_student_risk.csv",
-        help="Path to processed CSV file.",
+        default="data/ecotec_online_student_risk.csv",
+        help="Path to the finalized anonymized public CSV file.",
     )
     parser.add_argument(
         "--output-dir",

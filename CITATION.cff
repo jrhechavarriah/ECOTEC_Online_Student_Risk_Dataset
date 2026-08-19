@@ -36,11 +36,11 @@ keywords:
   - institutional analytics
 
 license: "CC-BY-4.0"
-version: "1.0.3"
-date-released: "2026-08-17"
-doi: "10.5281/zenodo.21982443"
+version: "1.0.4"
+date-released: "2026-08-19"
+doi: "10.5281/zenodo.22015963"
 repository-code: "https://github.com/jrhechavarriah/ECOTEC_Online_Student_Risk_Dataset"
-url: "https://doi.org/10.5281/zenodo.21982443"
+url: "https://doi.org/10.5281/zenodo.22015963"
 
 preferred-citation:
   type: dataset
@@ -58,8 +58,8 @@ preferred-citation:
     - family-names: "Ascencio-Jordan"
       given-names: "Erika"
       orcid: "https://orcid.org/0000-0003-0878-6207"
-  version: "1.0.3"
+  version: "1.0.4"
   year: 2026
   publisher: "Zenodo"
-  doi: "10.5281/zenodo.21982443"
-  url: "https://doi.org/10.5281/zenodo.21982443"
+  doi: "10.5281/zenodo.22015963"
+  url: "https://doi.org/10.5281/zenodo.22015963"
